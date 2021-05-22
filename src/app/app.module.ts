@@ -1,24 +1,46 @@
+import { environment } from './../environments/environment';
+import { MeetingListComponent } from './shared/components/meeting-list/meeting-list.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { MeetUpComponent } from './shared/components/meet-up/meet-up.component';
-import { MeetUpListComponent } from './shared/components/meet-up-list/meet-up-list.component';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './shared/components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MeetUpComponent,
-    MeetUpListComponent
-  ],
+    MeetingListComponent,
+    HeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(translate: TranslateService) {
+    const defaultlenguage = environment.defaultLanguage.split('-')[0];
+    translate.setDefaultLang(defaultlenguage);
+    translate.use(defaultlenguage);
+  }
+}
+
+// required for AOT compilation
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
+}
