@@ -1,4 +1,6 @@
 export const environment = {
   production: true,
-  defaultLanguage: 'es-AR'
+  defaultLanguage: 'es-AR',
+  apiUrl: '',
+  mockService: false
 };

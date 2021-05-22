@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  defaultLanguage: 'es-AR'
+  defaultLanguage: 'es-AR',
+  apiUrl: 'http://localhost:8080',
+  mockService: true
 };
 
 /*

@@ -1,5 +1,8 @@
+import { DataService } from './../../../core/services/data.service';
 import { Component, OnInit } from '@angular/core';
-import { MeetingItemResponse } from 'src/app/core/entities/responses/meeting-item.response';
+import { MeetingsResponse } from 'src/app/core/entities/responses/meetings.response';
+import { ErrorService } from 'src/app/core/services/error.service';
+import { ToastInterface } from 'src/app/core/interfaces/toast.interface';
 
 @Component({
   selector: 'app-meeting-list',
@@ -8,15 +11,24 @@ import { MeetingItemResponse } from 'src/app/core/entities/responses/meeting-ite
 })
 export class MeetingListComponent implements OnInit {
 
-  meetings: Array<MeetingItemResponse>;
-  constructor() { }
+  meetings: MeetingsResponse;
+  constructor(private dataService: DataService,
+              public errorService: ErrorService) { }
 
   ngOnInit() {
-    this.meetings = [{
-      date: "10-12-2021 10:40",
-      title: "Ejemplo",
-      participants: [{email: 'matiasretzlaff@gmail.com'}]
-    }]
+    this.getMeetings();
+  }
+
+  getMeetings() {
+    this.dataService.getMeetings().subscribe(
+      resp => {
+        this.meetings = resp;
+        this.errorService.showErrorAlertMessage('nada');
+      },
+      err => {
+        this.errorService.showErrorAlertMessage(err);
+      }
+    );
   }
 
 }

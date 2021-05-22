@@ -1,0 +1,21 @@
+{
+  "meetings": [
+    {
+      "date": "01-06-2021 10:00",
+      "title": "Meeting 1",
+      "participants": [
+        {
+          "email": "matiasretzlaff@gmail.com"
+        },
+        {
+          "email": "juanperez@gmail.com"
+        },
+        {
+          "email": "carlosgarcia@hotmail.com"
+        }
+      ]
+    },
+    {},
+    {}
+  ]
+}
