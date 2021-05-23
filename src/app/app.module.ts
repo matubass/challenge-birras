@@ -14,6 +14,8 @@ import { DataServiceMock } from './core/mock/data.service.mock';
 import { DataServiceInterface } from './core/interfaces/data.service.interface';
 import { DataService } from './core/services/data.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SpinnerComponent } from './shared/components/spinner/spinner.component';
+import { MeetingComponent } from './shared/components/meeting/meeting.component';
 
 const production = environment.production;
 const mockService = environment.mockService;
@@ -22,7 +24,9 @@ const mockService = environment.mockService;
   declarations: [
     AppComponent,
     MeetingListComponent,
-    HeaderComponent],
+    HeaderComponent,
+    SpinnerComponent,
+    MeetingComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

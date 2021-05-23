@@ -1,5 +1,9 @@
 {
   "HEADER": {
     "TITLE": "Challenge Birras"
+  },
+  "MEETING": {
+    "DATE_LABEL": "¿Cuándo?",
+    "PARTICIPANTS_LABEL": "¿Quiénes?"
   }
 }

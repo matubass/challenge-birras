@@ -11,6 +11,6 @@ export class ErrorService {
   }
 
   showErrorAlertMessage(message: string) {
-    alertify.error(message).delay(3);
+    alertify.error(message).delay(100);
   }
 }

@@ -1,0 +1,20 @@
+<div class="meeting-container mt-3 text-center">
+  <div class="meeting-title py-2">
+    {{meeting.title}}
+  </div>
+  <div class="meeting-date">
+    <label class="d-block">{{'MEETING.DATE_LABEL' | translate}}</label>
+    {{meeting.date}}
+  </div>
+  <div class="meeting-participants">
+    <label class="d-block">{{'MEETING.PARTICIPANTS_LABEL' | translate}}</label>
+    <div *ngFor="let participant of meeting.participants">
+      {{participant.email}}
+    </div>
+  </div>
+
+</div>
+
+
+
+

@@ -1,7 +1,8 @@
 <div class="container">
-  <div class="row">
-    <div class="col-12 col-sm-6" *ngFor="let meeting of meetings.meetings ;index as index">
-      {{meeting.title}}
-    </div>
+  <app-spinner class="row mt-3" *ngIf="loading"></app-spinner>
+  <div class="row" *ngIf="!loading">
+    <app-meeting *ngFor="let meeting of meetings.meetings ;index as index" [meeting]="meeting"
+      class="col-12 col-sm-4">
+    </app-meeting>
   </div>
 </div>
