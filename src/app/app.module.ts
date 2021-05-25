@@ -54,7 +54,7 @@ const mockService = environment.mockService;
     {
       provide: DataService,
       useFactory: createDataService,
-      deps: [Injector],
+      deps: [Injector]
     }
   ],
   bootstrap: [AppComponent]
