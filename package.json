@@ -27,7 +27,6 @@
     "alertifyjs": "^1.13.1",
     "bootstrap": "^5.0.1",
     "core-js": "^2.5.4",
-    "ng-bootstrap": "^1.6.3",
     "rxjs": "^6.6.7",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
