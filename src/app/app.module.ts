@@ -16,6 +16,9 @@ import { DataService } from './core/services/data.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SpinnerComponent } from './shared/components/spinner/spinner.component';
 import { MeetingComponent } from './shared/components/meeting/meeting.component';
+import { MeetDetailComponent } from './shared/components/meet-detail/meet-detail.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AuthModule, AuthService } from '@auth0/auth0-angular';
 
 const production = environment.production;
 const mockService = environment.mockService;
@@ -26,7 +29,8 @@ const mockService = environment.mockService;
     MeetingListComponent,
     HeaderComponent,
     SpinnerComponent,
-    MeetingComponent],
+    MeetingComponent,
+    MeetDetailComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -39,13 +43,18 @@ const mockService = environment.mockService;
         deps: [HttpClient]
       }
     }),
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule,
+    AuthModule.forRoot({
+      domain: 'matiasretzlaff-dev.us.auth0.com',
+      clientId: 'CCFP2WupTb7bmhrfDEjsLPT0zuuZM9uh'
+    })
   ],
   providers: [
     {
       provide: DataService,
       useFactory: createDataService,
-      deps: [Injector]
+      deps: [Injector],
     }
   ],
   bootstrap: [AppComponent]

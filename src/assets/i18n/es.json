@@ -2,8 +2,20 @@
   "HEADER": {
     "TITLE": "Challenge Birras"
   },
-  "MEETING": {
-    "DATE_LABEL": "¿Cuándo?",
-    "PARTICIPANTS_LABEL": "¿Quiénes?"
+  "MEETING-LIST": {
+    "ADD_BUTTON": "CREAR MEET"
+  },
+  "MEET_DETAIL": {
+    "TITLE_INPUT": {
+      "LABEL": "Título"
+    },
+    "DATE_INPUT": {
+      "LABEL": "Fecha y Hora"
+    },
+    "PARTICIPANT_INPUT": {
+      "LABEL": "Participantes"
+    },
+    "ADD_PARTICIPANT": "Agregar participante...",
+    "SAVE_BUTTON": "Guardar"
   }
 }

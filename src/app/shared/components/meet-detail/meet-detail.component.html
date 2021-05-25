@@ -1,0 +1,40 @@
+<div class="container">
+  <form [formGroup]="meetForm" novalidate>
+    <div class="form-row my-3">
+      <div class="form-col col-12">
+        <label class="form-label" for="titleInput">{{ 'MEET_DETAIL.TITLE_INPUT.LABEL' | translate }}</label>
+        <input class="form-control" formControlName="title" type="text" name="titleInput" autocomplete="off"
+        [ngClass]="{ 'is-invalid': (meetingForm?.title.dirty || meetingForm?.title?.touched) && meetingForm?.title?.errors, 'is-valid': (meetingForm?.title?.dirty || meetingForm?.title?.touched) && !meetingForm?.title?.errors }">
+      </div>
+    </div>
+    <div class="form-row my-3">
+      <div class="form-col col-12">
+        <label for="dateInput">{{ 'MEET_DETAIL.DATE_INPUT.LABEL' | translate }}</label>
+        <input class="form-control" formControlName="date" type="datetime-local" name="dateInput" min="{{minDate}}"
+        [ngClass]="{ 'is-invalid': (meetingForm?.date.dirty || meetingForm?.date?.touched) && meetingForm?.date?.errors, 'is-valid': (meetingForm?.date?.dirty || meetingForm?.date?.touched) && !meetingForm?.date?.errors }">
+      </div>
+    </div>
+    <div class="form-row my-3">
+      <div class="form-group col-12">
+        <label for="participantInput">{{ 'MEET_DETAIL.PARTICIPANT_INPUT.LABEL' | translate }}</label>
+        <div class="row">
+          <div class="col-9">
+            <input class="form-control" formControlName="email" name="email" placeholder="email">
+          </div>
+          <div class="col-3">
+            <button class="btn btn-link" (click)="addParticipant()">{{ 'MEET_DETAIL.ADD_PARTICIPANT' | translate }}</button>
+          </div>
+        </div>
+        <div class="row" formArrayName="participants" *ngFor="let participant of meetForm.get('participants')['controls']; let i = index;">
+          <div class="col">
+            <span>{{participant.controls.email.value}}</span>
+            <img class="float-end" src="../../../../assets/icons/person-dash.svg" (click)="removeParticipant(i)">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row my-3 text-end">
+      <button [disabled]="meetForm.invalid" class="btn btn-secondary" (click)="onSave()">{{'MEET_DETAIL.SAVE_BUTTON' | translate }}</button>
+    </div>
+  </form>
+</div>

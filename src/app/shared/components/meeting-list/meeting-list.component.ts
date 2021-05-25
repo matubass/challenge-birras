@@ -1,7 +1,9 @@
+import { Router } from '@angular/router';
 import { DataService } from './../../../core/services/data.service';
 import { Component, OnInit } from '@angular/core';
 import { MeetingsResponse } from 'src/app/core/entities/responses/meetings.response';
 import { ErrorService } from 'src/app/core/services/error.service';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-meeting-list',
@@ -14,7 +16,9 @@ export class MeetingListComponent implements OnInit {
   loading = true;
   meetings: MeetingsResponse;
   constructor(private dataService: DataService,
-              public errorService: ErrorService) { }
+              public errorService: ErrorService,
+              private route: Router,
+              private auth: AuthService) { }
 
   ngOnInit() {
     this.getMeetings();
@@ -31,6 +35,11 @@ export class MeetingListComponent implements OnInit {
         this.loading = false;
       }
     );
+  }
+
+  onNewMeet() {
+    this.auth.loginWithRedirect()
+    this.route.navigate(['new-meet']);
   }
 
 }
