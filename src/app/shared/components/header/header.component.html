@@ -3,6 +3,9 @@
     <div class="row">
       <div class="col-12 mt-3 logo">
         <img src='../../../../assets/images/Santander_Logo.svg'>
+        <button class="btn btn-light float-end" (click)="logOut()" *ngIf="auth.isAuthenticated$ | async;">
+          {{ 'HEADER.LOGOUT' | translate }}
+        </button>
       </div>
       <h2 class="col-12 mt-sm-0 mt-3 mb-3 text-center">
         {{ 'HEADER.TITLE' | translate }}

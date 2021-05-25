@@ -1,3 +1,4 @@
+import { AuthService } from '@auth0/auth0-angular';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public auth: AuthService) { }
 
   ngOnInit() {
+  }
+
+  logOut() {
+    this.auth.logout({ returnTo: document.location.origin });
   }
 
 }

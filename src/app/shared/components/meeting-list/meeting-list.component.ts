@@ -38,7 +38,7 @@ export class MeetingListComponent implements OnInit {
   }
 
   onNewMeet() {
-    this.auth.loginWithRedirect()
+    //this.auth.loginWithRedirect({redirect_uri: 'http://localhost:4200/new-meet'});
     this.route.navigate(['new-meet']);
   }
 

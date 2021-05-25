@@ -2,6 +2,7 @@ import { MeetDetailComponent } from './shared/components/meet-detail/meet-detail
 import { MeetingListComponent } from './shared/components/meeting-list/meeting-list.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from '@auth0/auth0-angular';
 
 const routes: Routes = [
   {
@@ -10,7 +11,8 @@ const routes: Routes = [
   },
   {
     path: 'new-meet',
-    component: MeetDetailComponent
+    component: MeetDetailComponent,
+    canActivate: [AuthGuard]
   }
 ];
 
