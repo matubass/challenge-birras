@@ -13,7 +13,6 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { DataServiceMock } from './core/mock/data.service.mock';
 import { DataServiceInterface } from './core/interfaces/data.service.interface';
 import { DataService } from './core/services/data.service';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SpinnerComponent } from './shared/components/spinner/spinner.component';
 import { MeetingComponent } from './shared/components/meeting/meeting.component';
 import { MeetDetailComponent } from './shared/components/meet-detail/meet-detail.component';
@@ -43,7 +42,6 @@ const mockService = environment.mockService;
         deps: [HttpClient]
       }
     }),
-    NgbModule,
     ReactiveFormsModule,
     AuthModule.forRoot({
       domain: 'matiasretzlaff-dev.us.auth0.com',
