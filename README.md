@@ -1,27 +1,15 @@
 # ChallengeBirras
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+Proyecto de front-end construido en Angular 10.
+Se usó bootstrap y ng-bootstrap como complementos
+Se realizó una integración con Auth0 como SSO.
 
-## Development server
+## Iniciar la aplicación
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Dentro del proyecto ejecutar los siguientes comandos
 
-## Code scaffolding
+npm install
+(Instala todas las dependencias del proyecto)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+ng serve --o
+(Ejecuta la aplicación y abre el navegador)
