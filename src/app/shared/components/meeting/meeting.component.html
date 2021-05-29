@@ -6,6 +6,10 @@
     <img class="me-2" src="../../../../assets/icons/calendar-event.svg">
     <span>{{meeting.date}}</span>
   </div>
+  <div class="meeting-temperature py-2">
+    <img class="me-2" src="../../../../assets/icons/thermometer-sun.svg">
+    <span>{{meeting.temperature}}°</span>
+  </div>
   <div class="d-grid gap-2">
     <button type="button" class="btn btn-outline-primary" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
     aria-controls="collapseExample">

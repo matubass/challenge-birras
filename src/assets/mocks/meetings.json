@@ -13,7 +13,8 @@
         {
           "email": "carlosgarcia@hotmail.com"
         }
-      ]
+      ],
+      "temperature": 23.1
     },
     {
       "date": "05-06-2021 11:30",
@@ -25,7 +26,8 @@
         {
           "email": "unusuario@gmail.com"
         }
-      ]
+      ],
+      "temperature": 19.5
     },
     {
       "date": "07-06-2021 15:12",
@@ -43,7 +45,8 @@
         {
           "email": "carlosgarcia@hotmail.com"
         }
-      ]
+      ],
+      "temperature": 21.4
     },
     {
       "date": "08-06-2021 12:00",
@@ -58,7 +61,8 @@
         {
           "email": "carlosgarcia@hotmail.com"
         }
-      ]
+      ],
+      "temperature": 18
     }
   ]
 }

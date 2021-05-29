@@ -6,6 +6,7 @@ export interface MeetingItemResponse {
   date: string;
   title: string;
   participants: Array<MeetingItemParticipantResponse>;
+  temperature: number;
 }
 
 export interface MeetingItemParticipantResponse {

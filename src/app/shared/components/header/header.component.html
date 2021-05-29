@@ -6,6 +6,9 @@
         <button class="btn btn-light float-end" (click)="logOut()" *ngIf="auth.isAuthenticated$ | async;">
           {{ 'HEADER.LOGOUT' | translate }}
         </button>
+        <button class="btn btn-light float-end" (click)="login()" *ngIf="!(auth.isAuthenticated$ | async);">
+          {{ 'HEADER.LOGIN' | translate }}
+        </button>
       </div>
       <h2 class="col-12 mt-sm-0 mt-3 mb-3 text-center">
         {{ 'HEADER.TITLE' | translate }}

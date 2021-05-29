@@ -1,7 +1,8 @@
 {
   "HEADER": {
     "TITLE": "Challenge Birras",
-    "LOGOUT": "Salir"
+    "LOGOUT": "Salir",
+    "LOGIN": "Ingresar"
   },
   "MEETING-LIST": {
     "ADD_BUTTON": "CREAR MEET"
