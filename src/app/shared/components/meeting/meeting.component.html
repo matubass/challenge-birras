@@ -1,0 +1,30 @@
+<div class="meeting-container mt-3 text-center">
+  <div class="meeting-title py-2">
+    {{meeting.title}}
+  </div>
+  <div class="meeting-date py-2">
+    <img class="me-2" src="../../../../assets/icons/calendar-event.svg">
+    <span>{{meeting.date}}</span>
+  </div>
+  <div class="meeting-temperature py-2">
+    <img class="me-2" src="../../../../assets/icons/thermometer-sun.svg">
+    <span>{{meeting.temperature}}°</span>
+  </div>
+  <div class="d-grid gap-2">
+    <button type="button" class="btn btn-outline-primary" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
+    aria-controls="collapseExample">
+    {{'MEETING.VIEW_MORE' | translate}}
+  </button>
+
+  </div>
+  <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+    <div class="card">
+      <div class="card-body">
+        <div *ngFor="let participan of meeting.participants">
+          {{participan.email}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

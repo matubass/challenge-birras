@@ -1,0 +1,14 @@
+<div class="container">
+  <app-spinner class="row mt-3" *ngIf="loading"></app-spinner>
+  <div class="row my-3" *ngIf="!loading">
+    <div class="col-12 text-center text-sm-end">
+      <button type="button" class="btn btn-secondary"
+      (click)="onNewMeet()">{{'MEETING-LIST.ADD_BUTTON' | translate}}</button>
+    </div>
+  </div>
+  <div class="row" *ngIf="!loading">
+    <app-meeting *ngFor="let meeting of meetings.meetings" [meeting]="meeting"
+      class="col-12 col-sm-4">
+    </app-meeting>
+  </div>
+</div>

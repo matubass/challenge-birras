@@ -1,0 +1,34 @@
+{
+  "HEADER": {
+    "TITLE": "Challenge Birras",
+    "LOGOUT": "Salir",
+    "LOGIN": "Ingresar"
+  },
+  "MEETING-LIST": {
+    "ADD_BUTTON": "CREAR MEET"
+  },
+  "MEET_DETAIL": {
+    "TITLE_INPUT": {
+      "LABEL": "Título"
+    },
+    "DATE_INPUT": {
+      "LABEL": "Fecha y Hora"
+    },
+    "PARTICIPANT_INPUT": {
+      "LABEL": "Participantes"
+    },
+    "ADD_PARTICIPANT": "Agregar participante...",
+    "SAVE_BUTTON": "Guardar",
+    "SUCCESS_MESSAGE": "Meet guardado con éxito",
+    "GEOLOCALIZATION_ERROR": "No se pudo obtener la geolocalización",
+    "TEMPERATURE_INPUT": {
+      "LABEL": "Temperatura"
+    },
+    "BEER_BOXES": {
+      "LABEL": "Cajas de cerveza"
+    }
+  },
+  "MEETING": {
+    "VIEW_MORE": "Participantes"
+  }
+}

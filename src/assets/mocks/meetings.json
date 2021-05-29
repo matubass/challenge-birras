@@ -1,0 +1,68 @@
+{
+  "meetings": [
+    {
+      "date": "01-06-2021 10:00",
+      "title": "Meeting 1",
+      "participants": [
+        {
+          "email": "matiasretzlaff@gmail.com"
+        },
+        {
+          "email": "juanperez@gmail.com"
+        },
+        {
+          "email": "carlosgarcia@hotmail.com"
+        }
+      ],
+      "temperature": 23.1
+    },
+    {
+      "date": "05-06-2021 11:30",
+      "title": "Meeting 2",
+      "participants": [
+        {
+          "email": "matiasretzlaff@gmail.com"
+        },
+        {
+          "email": "unusuario@gmail.com"
+        }
+      ],
+      "temperature": 19.5
+    },
+    {
+      "date": "07-06-2021 15:12",
+      "title": "Meeting 3",
+      "participants": [
+        {
+          "email": "matiasretzlaff@gmail.com"
+        },
+        {
+          "email": "juanperez@gmail.com"
+        },
+        {
+          "email": "unusuario@gmail.com"
+        },
+        {
+          "email": "carlosgarcia@hotmail.com"
+        }
+      ],
+      "temperature": 21.4
+    },
+    {
+      "date": "08-06-2021 12:00",
+      "title": "Meeting 4",
+      "participants": [
+        {
+          "email": "matiasretzlaff@gmail.com"
+        },
+        {
+          "email": "unusuario@gmail.com"
+        },
+        {
+          "email": "carlosgarcia@hotmail.com"
+        }
+      ],
+      "temperature": 18
+    }
+  ]
+}
