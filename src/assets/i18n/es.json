@@ -17,6 +17,14 @@
       "LABEL": "Participantes"
     },
     "ADD_PARTICIPANT": "Agregar participante...",
-    "SAVE_BUTTON": "Guardar"
+    "SAVE_BUTTON": "Guardar",
+    "SUCCESS_MESSAGE": "Meet guardado con éxito",
+    "GEOLOCALIZATION_ERROR": "No se pudo obtener la geolocalización",
+    "TEMPERATURE_INPUT": {
+      "LABEL": "Temperatura"
+    },
+    "BEER_BOXES": {
+      "LABEL": "Cajas de cerveza"
+    }
   }
 }
