@@ -7,7 +7,7 @@
     </div>
   </div>
   <div class="row" *ngIf="!loading">
-    <app-meeting *ngFor="let meeting of meetings.meetings ;index as index" [meeting]="meeting"
+    <app-meeting *ngFor="let meeting of meetings.meetings" [meeting]="meeting"
       class="col-12 col-sm-4">
     </app-meeting>
   </div>

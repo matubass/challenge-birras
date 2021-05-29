@@ -26,5 +26,8 @@
     "BEER_BOXES": {
       "LABEL": "Cajas de cerveza"
     }
+  },
+  "MEETING": {
+    "VIEW_MORE": "Participantes"
   }
 }

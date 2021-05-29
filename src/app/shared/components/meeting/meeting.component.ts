@@ -9,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class MeetingComponent implements OnInit {
 
   @Input() meeting: MeetingItemResponse;
-
+  public isCollapsed = true;
   constructor() { }
 
   ngOnInit() {

@@ -15,7 +15,50 @@
         }
       ]
     },
-    {},
-    {}
+    {
+      "date": "05-06-2021 11:30",
+      "title": "Meeting 2",
+      "participants": [
+        {
+          "email": "matiasretzlaff@gmail.com"
+        },
+        {
+          "email": "unusuario@gmail.com"
+        }
+      ]
+    },
+    {
+      "date": "07-06-2021 15:12",
+      "title": "Meeting 3",
+      "participants": [
+        {
+          "email": "matiasretzlaff@gmail.com"
+        },
+        {
+          "email": "juanperez@gmail.com"
+        },
+        {
+          "email": "unusuario@gmail.com"
+        },
+        {
+          "email": "carlosgarcia@hotmail.com"
+        }
+      ]
+    },
+    {
+      "date": "08-06-2021 12:00",
+      "title": "Meeting 4",
+      "participants": [
+        {
+          "email": "matiasretzlaff@gmail.com"
+        },
+        {
+          "email": "unusuario@gmail.com"
+        },
+        {
+          "email": "carlosgarcia@hotmail.com"
+        }
+      ]
+    }
   ]
 }
