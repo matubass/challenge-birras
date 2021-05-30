@@ -45,8 +45,8 @@ const mockService = environment.mockService;
     }),
     ReactiveFormsModule,
     AuthModule.forRoot({
-      domain: 'matiasretzlaff-dev.us.auth0.com',
-      clientId: 'CCFP2WupTb7bmhrfDEjsLPT0zuuZM9uh'
+      domain: environment.auth0.domain,
+      clientId: environment.auth0.clientId
     }),
     NgbModule
   ],

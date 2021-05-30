@@ -1,9 +1,10 @@
 import { Router } from '@angular/router';
 import { DataService } from './../../../core/services/data.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MeetingsResponse } from 'src/app/core/entities/responses/meetings.response';
 import { ErrorService } from 'src/app/core/services/error.service';
 import { AuthService } from '@auth0/auth0-angular';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-meeting-list',
@@ -11,10 +12,11 @@ import { AuthService } from '@auth0/auth0-angular';
   styleUrls: ['./meeting-list.component.scss']
 })
 
-export class MeetingListComponent implements OnInit {
+export class MeetingListComponent implements OnInit, OnDestroy {
 
   loading = true;
   meetings: MeetingsResponse;
+  subscription: Subscription;
   constructor(private dataService: DataService,
               public errorService: ErrorService,
               private route: Router,
@@ -25,7 +27,7 @@ export class MeetingListComponent implements OnInit {
   }
 
   getMeetings() {
-    this.dataService.getMeetings().subscribe(
+    this.subscription = this.dataService.getMeetings().subscribe(
       resp => {
         this.meetings = resp;
         this.loading = false;
@@ -38,8 +40,11 @@ export class MeetingListComponent implements OnInit {
   }
 
   onNewMeet() {
-    //this.auth.loginWithRedirect({redirect_uri: 'http://localhost:4200/new-meet'});
     this.route.navigate(['new-meet']);
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 }

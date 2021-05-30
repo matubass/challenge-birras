@@ -1,10 +1,11 @@
+import { Subscription } from 'rxjs';
 import { TemperatureRequest } from './../../../core/entities/requests/temperature.request';
 import { TranslateService } from '@ngx-translate/core';
 import { ErrorService } from 'src/app/core/services/error.service';
 import { SaveMeetRequest } from './../../../core/entities/requests/save-meet.request';
 import { DataService } from './../../../core/services/data.service';
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -12,7 +13,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
   templateUrl: './meet-detail.component.html',
   styleUrls: ['./meet-detail.component.scss']
 })
-export class MeetDetailComponent implements OnInit {
+export class MeetDetailComponent implements OnInit, OnDestroy {
 
   meetForm: FormGroup;
   participants: FormArray;
@@ -21,6 +22,7 @@ export class MeetDetailComponent implements OnInit {
   longitude: number;
   temperature: number;
   beerBoxes: number;
+  subscription: Subscription;
   constructor(private formBuilder: FormBuilder,
               private route: Router,
               private dataService: DataService,
@@ -39,7 +41,7 @@ export class MeetDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getLocation();
-    this.meetingForm.date.valueChanges.subscribe(
+    this.subscription = this.meetingForm.date.valueChanges.subscribe(
       value => {
         if (value) {
           this.getTemperature();
@@ -116,7 +118,7 @@ export class MeetDetailComponent implements OnInit {
       title: this.meetingForm.title.value,
       participants: this.meetingForm.participants.value
     };
-    this.dataService.saveMeeting(request).subscribe(
+    this.subscription = this.dataService.saveMeeting(request).subscribe(
       rest => {
         this.errorService.showSuccessAlertMessage(this.translateService.instant('MEET_DETAIL.SUCCESS_MESSAGE'));
         this.route.navigate(['']);
@@ -125,5 +127,9 @@ export class MeetDetailComponent implements OnInit {
         this.errorService.showErrorAlertMessage(err);
       }
     )
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }
