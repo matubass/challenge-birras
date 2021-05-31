@@ -13,3 +13,5 @@ npm install
 
 ng serve --o
 (Ejecuta la aplicación y abre el navegador)
+
+En el environment hay una bandera para manejar los mocks que por defecto esta activada ya que sino necesita que la api este funcionando.
